@@ -5,7 +5,7 @@ import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
 
 # Указываем место расположения файла
-sliceWorkSheetMIS = r"E:\Test\Архив карт медосмотра МИС.xls"
+sliceWorkSheetMIS = r"E:\Архивы январь февраль\Архив МИС Январь.xlsx"
 pathFileSaveMIS = r"E:\Test\Автоматический вариант МИС.xlsx"
 
 # Читаем данные из файлов с помощью панды указывая что 5 строка это шапка и выбирая колонки C:E, I

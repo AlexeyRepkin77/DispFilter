@@ -7,7 +7,7 @@ from ParseExcelOMS import omsFrame
 pd.set_option('display.expand_frame_repr', False)
 
 # Указываем место расположения файла
-generalArchiveSave = r"E:\Test\Общий.xlsx"
+generalArchiveSave = r"E:\Архивы январь февраль\Общий Январь.xlsx"
 
 # Объеденияем два DataFrame (omsFrame и sliceWorkSheetMIS)
 genFrame = omsFrame.merge(sliceWorkSheetMIS, how='outer')

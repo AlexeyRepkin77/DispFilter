@@ -5,7 +5,7 @@ import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
 
 # Указываем место расположения файла
-sliceWorkSheetOMS = r"E:\Test\Список пациентов Февраль ОМС.xlsx"
+sliceWorkSheetOMS = None
 pathFileSaveOMS = r"E:\Test\Автоматический вариант ОМС.xlsx"
 
 # Читаем данные из файлов с помощью панды указывая что 5 строка это шапка и выбирая колонки A:D, I, J
