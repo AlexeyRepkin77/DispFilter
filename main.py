@@ -12,14 +12,23 @@ class Geneneral_Window(QtWidgets.QMainWindow):
         self.ui = Ui_DispFilter()
         self.ui.setupUi(self)
         # Ссылка на функцию открытия диалогового окна
-        self.ui.TButton_OMS.clicked.connect(self.getDirectory)
-        # Функцию открытия диалогового окна
-    def getDirectory(self):
-        omsFrame = QFileDialog.getOpenFileName(self, "Выбрать файл", ".", "All Files(*);"
-                                                                          ";Книга Excel 97-2003(*.xls);"
-                                                                          ";Книга Excel(*.xlsx);")
-        omsFrame = self.ui.lineEdit_OMS.setText((omsFrame))
+        self.ui.TButton_OMS.clicked.connect(self.getFileName)
 
+        self.ui.TButton_MIS.clicked.connect(self.getFileName)
+
+        self.ui.TButton_Error.clicked.connect(self.getDirectory)
+
+
+        # Функцию открытия диалогового окна
+    def getFileName(self):
+        d = QFileDialog.getOpenFileName(self, "Выберите файл", ".", "Книга Excel 97-2003(*.xls);"
+                                                                          ";Книга Excel(*.xlsx);"
+                                                                          ";All Files(*)")
+        print(d)
+        self.ui.lineEdit_OMS.setText(str(d))
+
+    def getDirectory(self):
+        b = QFileDialog.getExistingDirectory(self, "Выбрать папку", ".")
 
 
 app = QtWidgets.QApplication(sys.argv)
