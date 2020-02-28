@@ -5,6 +5,9 @@ from DispFilterGUI import Ui_DispFilter
 #from ParseExcelOMS import omsFrame
 
 
+
+global sliceWorkSheetMIS
+
 class Geneneral_Window(QtWidgets.QMainWindow):
     def __init__(self):
         super(Geneneral_Window, self).__init__()
@@ -24,14 +27,17 @@ class Geneneral_Window(QtWidgets.QMainWindow):
 
     # Функцию открытия диалогового окна выбора файла ОМС ([0]) в конце файла делает так что бы путь выводился корректно
     def getFileNameOMS(self):
-        sliceWorkSheetMIS = QFileDialog.getOpenFileName(self, "Выберите файл", ".", "Книга Excel 97-2003(*.xls);" ";Книга Excel(*.xlsx);" ";All Files(*)")[0]
+        sliceWorkSheetMIS = QFileDialog.getOpenFileName(self, "Выберите файл", ".", "Книга Excel 97-2003(*.xls);" 
+                                                                                    "; Книга Excel(*.xlsx);" 
+                                                                                    ";All Files(*)")[0]
         self.ui.lineEdit_OMS.setText(str(sliceWorkSheetMIS))
-        print(sliceWorkSheetMIS)
+
 
     def getFileNameMIS(self):
-        omsFrame = QFileDialog.getOpenFileName(self, "Выберите файл", ".", "Книга Excel 97-2003(*.xls);" ";Книга Excel(*.xlsx);" ";All Files(*)")[0]
+        omsFrame = QFileDialog.getOpenFileName(self, "Выберите файл", ".", "Книга Excel 97-2003(*.xls);" 
+                                                                           "; Книга Excel(*.xlsx);" 
+                                                                           ";All Files(*)")[0]
         self.ui.lineEdit_MIS.setText(str(omsFrame))
-        print(omsFrame)
 
 
     def getDirectory(self):
@@ -39,6 +45,7 @@ class Geneneral_Window(QtWidgets.QMainWindow):
         self.ui.lineEdit_Error.setText(str(generalArchiveSave))
 
     def btnClicOMC(self):
+        print(sliceWorkSheetMIS)
 
 
 
