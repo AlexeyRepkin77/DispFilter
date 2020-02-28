@@ -1,9 +1,8 @@
 import sys
-import pandas as pd
 from PyQt5.QtWidgets import QApplication, QTableView
 from PyQt5.QtCore import QAbstractTableModel, Qt
+from ParseDublicate import genFrame
 
-from ParseExcelMIS import sliceWorkSheetMIS
 
 
 class pandasModel(QAbstractTableModel):
@@ -31,7 +30,7 @@ class pandasModel(QAbstractTableModel):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    model = pandasModel(sliceWorkSheetMIS)
+    model = pandasModel(genFrame)
     view = QTableView()
     view.setModel(model)
     view.resize(800, 600)
