@@ -5,7 +5,7 @@ import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
 
 # Указываем место расположения файла
-sliceWorkSheetOMS = None
+sliceWorkSheetOMS = r'E:\WorkPython\ОМС Февраль.xls'
 pathFileSaveOMS = r"E:\Test\Автоматический вариант ОМС.xlsx"
 
 # Читаем данные из файлов с помощью панды указывая что 5 строка это шапка и выбирая колонки A:D, I, J
@@ -54,4 +54,9 @@ omsFrame = omsFrame[[0, 1, 2, 'Дата рождения', 'Врач', 'Тип']
 # Переменовываем их
 omsFrame.columns = ['Фамилия', 'Имя', 'Отчество','Дата рождения', 'Врач', 'Тип']
 
+# Количество строк в файле
+countLineOMS = len(omsFrame.index)
+
 #omsFrame.to_excel(pathFileSaveOMS, index=False, header=False,)
+
+print(countLineOMS)

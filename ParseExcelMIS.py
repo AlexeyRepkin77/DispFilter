@@ -5,7 +5,7 @@ import pandas as pd
 pd.set_option('display.expand_frame_repr', False)
 
 # Указываем место расположения файла
-sliceWorkSheetMIS = r"E:\Архивы январь февраль\Архив МИС Январь.xlsx"
+sliceWorkSheetMIS = r"E:\WorkPython\МИС Февраль.xlsx"
 pathFileSaveMIS = r"E:\Test\Автоматический вариант МИС.xlsx"
 
 # Читаем данные из файлов с помощью панды указывая что 5 строка это шапка и выбирая колонки C:E, I
@@ -37,5 +37,9 @@ sliceWorkSheetMIS['Тип'] = 'МИС'
 # Применяем фильтр для колонки "Врач"
 sliceWorkSheetMIS = sliceWorkSheetMIS.loc[sliceWorkSheetMIS['Врач'].isin(keysFilter)]
 
+# Количество строк в файле
+countLineMIS = len(sliceWorkSheetMIS.index)
+
 # Сохраняем в Excel необходимые колонки отрезая индексы и шапку
 #sliceWorkSheetMIS.to_excel(pathFileSaveMIS, columns=['Фамилия', 'Имя', 'Отчество', 'Дата рождения', 'Врач', 'Адрес', 'Тип'], index=False, header=False)
+print(countLineMIS)
